@@ -8,7 +8,7 @@ To use, either copy or symlink the commit-msg file to/from your .git/hooks/ fold
 ###Format: (TYPE) [ACTION] #ISSUE SUMMARY [empty line] DESCRIPTION
 
 + TYPE any of the following in parens  
-feature, feat, bugfix, fix, task, doc, docs, release, changelog, chore
+feature, feat, bugfix, fix, task, doc, docs, release, changelog, chore, refactor
 + ACTION [optional]  
 fix, fixes, fixed, close, closes, closed, resolve, resolves, resolved
 + \#ISSUE  

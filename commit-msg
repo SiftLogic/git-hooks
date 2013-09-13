@@ -8,14 +8,14 @@
 HAS_ERROR=0
 ERROR=""
 
-grep -Ehnq "^\((feat|bugfix|fix|task|doc|docs|release|changelog|chore)\)+\s+(fix|fixes|fixed|close|closes|closed|resolve|resolves|resolved)?+\s?+\#([0-9]+|spelling|typo|whitespace|noticket)+\s" "$1"; RET=$?
+grep -Ehnq "^\((feat|bugfix|fix|task|doc|docs|release|changelog|chore|refactor)\)+\s+(fix|fixes|fixed|close|closes|closed|resolve|resolves|resolved)?+\s?+\#([0-9]+|spelling|typo|whitespace|noticket)+\s" "$1"; RET=$?
 if [ $RET -eq 1 ]; then
     HAS_ERROR=1
 fi
 
 if [ ${HAS_ERROR} = 1 ]; then
     ERROR="\nCommit message must be in format: (TYPE) #ISSUE SUMMARY\n"
-    ERROR="${ERROR}  - TYPE: one of [feat|bugfix|fix|task|doc|docs|release|changelog|chore] *IN PARENS*\n"
+    ERROR="${ERROR}  - TYPE: one of [feat|bugfix|fix|task|doc|docs|release|changelog|chore|refactor] *IN PARENS*\n"
     ERROR="${ERROR}          e.g. (feature)\n"
     ERROR="${ERROR}  - ISSUE: optional action [fix|fixes|fixed|close|closes|closed|resolve|resolves|resolved]\n"
     ERROR="${ERROR}           then #[github issue number|spelling|typo|whitespace]\n"
