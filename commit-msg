@@ -8,7 +8,7 @@
 HAS_ERROR=0
 ERROR=""
 
-grep -Ehnq "^\((feat|bugfix|fix|task|doc|docs|release|changelog|chore|refactor)\)+\s+(fix|fixes|fixed|close|closes|closed|resolve|resolves|resolved)?+\s?+\#([0-9]+|spelling|typo|whitespace|noticket)+\s" "$1"; RET=$?
+grep -Ehnq "^\((feat|hotfix|bugfix|fix|task|doc|docs|release|changelog|chore|refactor)\)+\s+(fix|fixes|fixed|close|closes|closed|resolve|resolves|resolved)?+\s?+\#([0-9]+|spelling|typo|whitespace|noticket)+\s" "$1"; RET=$?
 if [ $RET -eq 1 ]; then
     HAS_ERROR=1
 fi
